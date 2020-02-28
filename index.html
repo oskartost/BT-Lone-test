@@ -32,6 +32,38 @@
 			<input type="hidden" id="GemtInput" >
 			<br>
 			
+			Midlertidig skudprocentsudregner <br>
+			skud
+		<input type = "text" id = "Skud" /> <br><br>
+			misses
+		<input type = "text" id = "Misses" /> <br><br>
+		<button onclick = "calculate ()"> Udregn </button>
+		<br><br>
+		<div id = "result"></div>
+		<br><br>
+		
+		
+		
+		
+		
+		
+		
+		
+		<p>Click the button to show the highscore in percent</p>
+
+<button onclick="showHighscore()">Show highscore</button>
+
+<p id="highscore"></p>
+
+<script>
+var points = [40, 100, 1, 5, 25, 10];
+document.getElementById("highscore").innerHTML = points;
+
+function showHighscore() {
+  points.sort(function(a, b){return b-a});
+  document.getElementById("highscore").innerHTML = points;
+}
+</script>
 
 			<br>
 			

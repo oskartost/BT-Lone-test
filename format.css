@@ -1,5 +1,5 @@
 body{
-	background-color: green;
+	background-color: white;
 }	
 img{
 	width: 100%;	
@@ -37,4 +37,16 @@ img{
 }
 #ledOffButton{
 	width: 100%;
+}
+#Skud{
+	position: relative;
+	left: 50px;
+	width: auto;
+	margin: auto;
+}
+#Misses{
+	position: relative;
+	left: 37px;
+	width: auto;
+	margin: auto;
 }

@@ -45,6 +45,10 @@ void error(const __FlashStringHelper*err) {
 /**************************************************************************/
 void setup(void)
 {
+  int skud = 1;
+  int miss = 1;
+  int infrared = 0;
+  int vibration = 0;
   while (!Serial);  // required for Flora & Micro
   delay(500);
 
@@ -116,6 +120,7 @@ void setup(void)
 /**************************************************************************/
 void loop(void)
 {
+
   // Check for user input
   char n, inputs[BUFSIZE + 1];
 

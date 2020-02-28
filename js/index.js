@@ -86,7 +86,12 @@ function onConnError(){
 }
 
  function onData(data){ // data received from Arduino
-	document.getElementById("receiveDiv").innerHTML =  "Received: " + bytesToString(data) + "<br/>";
+	input = bytesToString(data);
+	document.getElementById("receiveDiv").innerHTML =  "Received: " + input + "<br/>";
+	if ( input == "s")
+	{
+		Skud.value = 1;
+	}
 }
 
 function data(txt){
@@ -103,6 +108,17 @@ function onSend(){
 	document.getElementById("sendDiv").innerHTML = "Sent: " + GemtInput.value + "<br/>";
 }
 
+function calculate() {
+	
+	var s = document.getElementById("Skud").value;
+	var m = document.getElementById("Misses").value;
+	
+	s = parseFloat(s);
+	m = parseFloat(m);
+	var result = 100 - (m  / s * 100) + " % ";
+	
+	document.getElementById("result").innerHTML = result;
+}
 
 function disconnect() {
 	ble.disconnect(ConnDeviceId, onDisconnect, onError);
@@ -114,5 +130,6 @@ function onDisconnect(){
 function onError(reason)  {
 	alert("ERROR: " + reason); // real apps should use notification.alert
 }
+
 
 	
