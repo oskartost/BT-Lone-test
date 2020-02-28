@@ -94,9 +94,14 @@ function onConnError(){
  function onData(data){ // data received from Arduino
 	let input = bytesToString(data);
 	hej.value = input;
+	let finalInput = input;
 	if (hej.value === 's')
 	{
 		document.getElementById("receiveDiv").innerHTML =  'indre if løkke';
+	}
+	if (hej.value === 'm')
+	{
+		test.value = 1;
 	}
 }
 
