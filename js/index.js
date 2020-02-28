@@ -90,7 +90,7 @@ function onConnError(){
 	document.getElementById("receiveDiv").innerHTML =  "Received: " + input + "<br/>";
 	if ( input == "s")
 	{
-		Skud.value = 1;
+		Skud.value = "1";
 	}
 }
 
