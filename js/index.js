@@ -5,7 +5,8 @@ let hej = document.getElementById('skud');
 let test = document.getElementById('hejjj');
 let nyTest = document.getElementById('nyinput');
 
-test.value += 1;
+test.value = 1;
+test.value += 2;
 // ASCII only
 function bytesToString(buffer) {
     return String.fromCharCode.apply(null, new Uint8Array(buffer));
