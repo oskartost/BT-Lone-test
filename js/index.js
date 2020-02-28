@@ -92,7 +92,7 @@ function onConnError(){
 }
 
  function onData(data){ // data received from Arduino
-	input = bytesToString(data);
+	let input = bytesToString(data);
 	hej.value = input;
 	if (input === 's')
 	{
