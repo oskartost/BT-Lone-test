@@ -91,9 +91,9 @@ function onConnError(){
  function onData(data){ // data received from Arduino
 	input = bytesToString(data);
 	document.getElementById("receiveDiv").innerHTML =  "Received: " + input + "<br/>";
-	if ( input == "s")
+	if ( input == 's')
 	{
-		Skud.value = "1";
+		Skud.value = 1;
 	}
 }
 
