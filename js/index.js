@@ -93,10 +93,10 @@ function onConnError(){
 
  function onData(data){ // data received from Arduino
 	input = bytesToString(data);
-	document.getElementById("receiveDiv").innerHTML =  "Received: " + input + "<br/>";
 	if (input === 's')
 	{
-		hej.value = 1;
+		document.getElementById("receiveDiv").innerHTML =  'indre if løkke';
+		hej.value = 'hej';
 	}
 }
 
