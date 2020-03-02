@@ -124,9 +124,9 @@ function onConnError(){
 	}
 	
 	parsedProcent = udregnProcent(antalMisses, antalSkud);
-	let midlertidig.value = parsedProcent;
-	midlertidig = midlertidig.toFixed(2);
-	antalProcent.value = midlertidig;
+	let midlertidigProcent = parsedProcent;
+	midlertidigProcent = midlertidigProcent.toFixed(2);
+	antalProcent.value = midlertidigProcent;
 }
 
 function data(txt){
