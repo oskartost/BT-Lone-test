@@ -2,8 +2,9 @@
 //https://github.com/don/cordova-plugin-ble-central
 
 let antalSkud = document.getElementById('skud');
-let antalMisses = document.getElementById('misses');
 let antalProcent = document.getElementById('procent');
+let antalScoret = document.getElementById('scoret');
+let antalMisses = document.getElementById('misses');
 let finalInput = document.getElementById('inputDebug');
 // ASCII only
 
@@ -102,12 +103,15 @@ function onConnError(){
  function onData(data){ // data received from Arduino
 	let parsedSkud = parseInt(antalSkud.value);
 	let parsedMiss = parseInt(antalMisses.value);
+	let parsedScoret = parseInt(antalScoret.value);
 	let input = bytesToString(data);
 	finalInput.value = input;
 	if (finalInput.value === 's')
 	{
 		parsedSkud += 1;
+		parsedScoret += 1;
 		antalSkud.value = parsedSkud;
+		antalScoret.value = parsedScoret;
 	}
 	
 	if (finalInput.value === 'm')
@@ -118,7 +122,7 @@ function onConnError(){
 		antalSkud.value = parsedSkud;
 	}
 	
-	antalProcent.value = udregnProcent(antalMisses, antalSkud);
+	antalProcent.value = udregnProcent(antalMisses, antalSkud) + ' %';
 }
 
 function data(txt){

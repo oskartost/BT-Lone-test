@@ -44,13 +44,16 @@ img{
 }
 #Skud{
 	position: relative;
-	left: 50px;
 	width: auto;
 	margin: auto;
 }
 #Misses{
 	position: relative;
-	left: 37px;
 	width: auto;
 	margin: auto;
+}
+#tabel{
+	width: auto;
+	margin: auto;
+	
 }
