@@ -4,7 +4,6 @@
         <meta charset="utf-8" />
         <meta name="format-detection" content="telephone=no" />
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-		
 		<meta name="viewport" content="width=device-width, initial-scale=1">	
 		<link rel = "stylesheet" type = "text/css" href = "format.css">   <!-- Link to style sheet named format.css -->
 		<script type="text/javascript" src="cordova.js"></script> 
@@ -14,35 +13,27 @@
 		<!-- Content: div-tag with id = "content" -->
 		<div id = "content">
 			
-			<h1>Bluifruit øvelse</h1>
-			   <input id="nyinput"/>
+			<h1>Shooter's Life</h1>
 			<ul id="bleDeviceList"> </ul>  
 			<button id="refreshButton" onClick = "refreshDeviceList()">Refresh</button>
-						
-			<br>
+			
 			<div id="statusDiv">Status: Disconnected</div>
 			<div id="bleId">DeviceId:</div>
 			<div id="debugDiv"></div>
-			<br><br>
-			<button id="ledOnButton" onclick = "data('1')">Set led ON</button>
-			<br><br>
-			<button id="ledOffButton" onclick = "data('0')">Set Led Off</button>
-			<br><br><br>
 
-			<input type="hidden" class="hidden" id="GemtInput"/>
-			   <input type="data" id="hejjj"/>
-		<input type="text" id="skud"/>
-		<input type="text" id="Misses" /> <br><br>
-		<button id="lul"> Udregn </button>
-		<br><br>
-		<div id = "result"></div>
-		<br><br>
-				
+			<input type="hidden" class="hidden" id="gemtInput"/>
+			<br><br>
+			<input type="data" id="skud"/>
+			<br><br>
+			<input type="data" id="misses"/>
+			<br><br>
+			<input type="data" id="procent" /> 
+			<br><br>
+			<div id="receiveDiv"></div>	
 		
 		<div id="sendDiv"></div>
 			<br><br>
 			<button id="disconnectButton"onClick="disconnect()">Disconnect</button>
-			<div id="receiveDiv"></div>
 		</div>
 		
 		

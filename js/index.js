@@ -1,12 +1,12 @@
 // Based on an example:
 //https://github.com/don/cordova-plugin-ble-central
 
-let hej = document.getElementById('skud');
-let test = document.getElementById('hejjj');
-let nyTest = document.getElementById('nyinput');
-
-test.value = 1;
-test.value += 2;
+let antalSkud = document.getElementById('skud');
+let antalMisses = document.getElementById('misses');
+let antalProcent = document.getElementById('procent');
+antalSkud.value = 2;
+antalMisses.value = 1;
+antalProcent.value = (100- (antalMisses.value / antalSkud.value * 100)) + '%';
 // ASCII only
 function bytesToString(buffer) {
     return String.fromCharCode.apply(null, new Uint8Array(buffer));
@@ -95,15 +95,16 @@ function onConnError(){
 
  function onData(data){ // data received from Arduino
 	let input = bytesToString(data);
-	hej.value = input;
 	let finalInput = input;
-	if (hej.value === 's')
+	if (finalInput === 's')
 	{
 		document.getElementById("receiveDiv").innerHTML =  'indre if løkke';
+		antalSkud.value += 1;
 	}
-	if (hej.value === 'm')
+	
+	if (finalInput === 'm')
 	{
-		test.value = 1;
+		antalMisses.value += 1;
 	}
 }
 
@@ -121,17 +122,6 @@ function onSend(){
 	document.getElementById("sendDiv").innerHTML = "Sent: " + GemtInput.value + "<br/>";
 }
 
-function calculate() {
-	
-	var s = document.getElementById("Skud").value;
-	var m = document.getElementById("Misses").value;
-	
-	s = parseFloat(s);
-	m = parseFloat(m);
-	var result = 100 - (m  / s * 100) + " % ";
-	
-	document.getElementById("result").innerHTML = result;
-}
 
 function disconnect() {
 	ble.disconnect(ConnDeviceId, onDisconnect, onError);
