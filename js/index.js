@@ -117,8 +117,8 @@ function onConnError(){
 		document.getElementById("receiveDiv").innerHTML =  'indre if løkke';
 		
 		parsedSkud += 1;
-		antalSkud.value = parsedData;
-		inputDebugJava = parsedData;
+		antalSkud.value = parsedSkud;
+		inputDebugJava = parsedSkud;
 	}
 	
 	if (finalInput.value === 'm')
