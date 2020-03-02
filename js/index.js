@@ -1,11 +1,10 @@
 // Based on an example:
 //https://github.com/don/cordova-plugin-ble-central
 
-var antalSkud = document.getElementById('skud');
-let parsedData = parseInt(antalSkud.value);
+let antalSkud = document.getElementById('skud');
 
-var antalMisses = parseInt(document.getElementById('misses').value);
-var antalProcent = parseFloat(document.getElementById('procent').value);
+let antalMisses = document.getElementById('misses');
+let antalProcent = document.getElementById('procent');
 //antalSkud = parseInt(antalSkud);
 //antalMisses = parseInt(antalMisses);
 //antalProcent = parseFloat(antalProcent);
@@ -13,11 +12,18 @@ var antalProcent = parseFloat(document.getElementById('procent').value);
 let finalInput = document.getElementById('inputDebug');
 //antalSkud = 2;
 //antalMisses = 1;
-antalProcent = (100 - (antalMisses.value / antalSkud.value * 100));
+//antalProcent = (100 - (antalMisses.value / antalSkud.value * 100));
 // ASCII only
 function bytesToString(buffer) {
     return String.fromCharCode.apply(null, new Uint8Array(buffer));
 }
+
+function udregnProcent(field1, field2) {
+	let parsed1 = parseInt(field1.value);
+	let parsed2 = parseInt(field2.value);
+	return 100 - (parsed1 / parsed2 * 100);
+}
+
 
 // ASCII only
 function stringToBytes(string) {
@@ -101,14 +107,16 @@ function onConnError(){
 }
 
  function onData(data){ // data received from Arduino
+	let parsedSkud = parseInt(antalSkud.value);
+	let parsedMiss = parseInt(antalMisses.value);
 	let input = bytesToString(data);
 	finalInput.value = input;
 	//inputDebugJava.value = finalInput;
 	if (finalInput.value === 's')
 	{
 		document.getElementById("receiveDiv").innerHTML =  'indre if løkke';
-		//antalSkud = parseInt(antalSkud);
-		parsedData += 1;
+		
+		parsedSkud += 1;
 		antalSkud.value = parsedData;
 		inputDebugJava = parsedData;
 	}
@@ -117,6 +125,8 @@ function onConnError(){
 	{
 		antalMisses.value += 1;
 	}
+	
+	antalProcent.value = udregnProcent(antalMisses, antalSkud);
 }
 
 function data(txt){
