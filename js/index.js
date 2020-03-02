@@ -1,12 +1,12 @@
 // Based on an example:
 //https://github.com/don/cordova-plugin-ble-central
 
-let antalSkud = document.getElementById('skud').value;
-let antalMisses = document.getElementById('misses').value;
-let antalProcent = document.getElementById('procent').value;
-antalSkud = parseInt(antalSkud);
-antalMisses = parseInt(antalMisses);
-antalProcent = parseFloat(antalProcent);
+let antalSkud = document.getElementById('skud');
+let antalMisses = document.getElementById('misses');
+let antalProcent = document.getElementById('procent');
+//antalSkud = parseInt(antalSkud);
+//antalMisses = parseInt(antalMisses);
+//antalProcent = parseFloat(antalProcent);
 //let inputDebugJava = document.getElementById('inputDebug').value;
 let finalInput = document.getElementById('inputDebug');
 antalSkud.value = 2;
@@ -105,7 +105,7 @@ function onConnError(){
 	if (finalInput.value === 's')
 	{
 		document.getElementById("receiveDiv").innerHTML =  'indre if løkke';
-		
+		antalSkud = parseInt(antalSkud);
 		antalSkud.value += 1;
 	}
 	
