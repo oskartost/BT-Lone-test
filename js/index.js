@@ -104,6 +104,7 @@ function onConnError(){
 	let parsedSkud = parseInt(antalSkud.value);
 	let parsedMiss = parseInt(antalMisses.value);
 	let parsedScoret = parseInt(antalScoret.value);
+	let parsedProcent = parseFloat(antalProcent.value);
 	let input = bytesToString(data);
 	finalInput.value = input;
 	if (finalInput.value === 's')
@@ -122,8 +123,9 @@ function onConnError(){
 		antalSkud.value = parsedSkud;
 	}
 	
-	antalProcent.value = udregnProcent(antalMisses, antalSkud);
-	(antalProcent.value).toFixed(2);
+	parsedProcent = udregnProcent(antalMisses, antalSkud);
+	//(parsedProcent.value).toFixed(2);
+	antalProcent.value = parsedProcent;
 }
 
 function data(txt){
