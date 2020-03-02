@@ -1,17 +1,17 @@
 // Based on an example:
 //https://github.com/don/cordova-plugin-ble-central
 
-let antalSkud = parseInt(document.getElementById('skud')).value;
-let antalMisses = document.getElementById('misses');
-let antalProcent = document.getElementById('procent');
+var antalSkud = parseInt(document.getElementById('skud'));
+var antalMisses = parseInt(document.getElementById('misses')).value;
+var antalProcent = parseInt(document.getElementById('procent')).value;
 //antalSkud = parseInt(antalSkud);
 //antalMisses = parseInt(antalMisses);
 //antalProcent = parseFloat(antalProcent);
 //let inputDebugJava = document.getElementById('inputDebug').value;
 let finalInput = document.getElementById('inputDebug');
-antalSkud.value = 2;
-antalMisses.value = 1;
-antalProcent.value = (100- (antalMisses.value / antalSkud.value * 100)) + '%';
+antalSkud = 2;
+antalMisses = 1;
+antalProcent = (100- (antalMisses.value / antalSkud.value * 100)) + '%';
 // ASCII only
 function bytesToString(buffer) {
     return String.fromCharCode.apply(null, new Uint8Array(buffer));
@@ -100,13 +100,14 @@ function onConnError(){
 
  function onData(data){ // data received from Arduino
 	let input = bytesToString(data);
-	finalInput.value = antalSkud;
+	finalInput.value = input;
 	//inputDebugJava.value = finalInput;
 	if (finalInput.value === 's')
 	{
 		document.getElementById("receiveDiv").innerHTML =  'indre if løkke';
 		//antalSkud = parseInt(antalSkud);
-		antalSkud.value += 1;
+		antalSkud += 1;
+		inputDebugJava = antalSkud;
 	}
 	
 	if (finalInput.value === 'm')
