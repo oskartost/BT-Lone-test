@@ -1,17 +1,19 @@
 // Based on an example:
 //https://github.com/don/cordova-plugin-ble-central
 
-var antalSkud = parseInt(document.getElementById('skud'));
-var antalMisses = parseInt(document.getElementById('misses')).value;
-var antalProcent = parseInt(document.getElementById('procent')).value;
+var antalSkud = document.getElementById('skud');
+let parsedData = parseInt(antalSkud.value);
+
+var antalMisses = parseInt(document.getElementById('misses').value);
+var antalProcent = parseFloat(document.getElementById('procent').value);
 //antalSkud = parseInt(antalSkud);
 //antalMisses = parseInt(antalMisses);
 //antalProcent = parseFloat(antalProcent);
 //let inputDebugJava = document.getElementById('inputDebug').value;
 let finalInput = document.getElementById('inputDebug');
-antalSkud = 2;
-antalMisses = 1;
-antalProcent = (100- (antalMisses.value / antalSkud.value * 100)) + '%';
+//antalSkud = 2;
+//antalMisses = 1;
+antalProcent = (100 - (antalMisses.value / antalSkud.value * 100));
 // ASCII only
 function bytesToString(buffer) {
     return String.fromCharCode.apply(null, new Uint8Array(buffer));
@@ -106,8 +108,9 @@ function onConnError(){
 	{
 		document.getElementById("receiveDiv").innerHTML =  'indre if løkke';
 		//antalSkud = parseInt(antalSkud);
-		antalSkud += 1;
-		inputDebugJava = antalSkud;
+		parsedData += 1;
+		antalSkud.value = parsedData;
+		inputDebugJava = parsedData;
 	}
 	
 	if (finalInput.value === 'm')
