@@ -4,6 +4,9 @@
 let antalSkud = document.getElementById('skud');
 let antalMisses = document.getElementById('misses');
 let antalProcent = document.getElementById('procent');
+antalSkud = parseInt(antalSkud);
+antalMisses = parseInt(antalMisses);
+antalProcent = parseFloat(antalProcent);
 //let inputDebugJava = document.getElementById('inputDebug').value;
 let finalInput = document.getElementById('inputDebug');
 antalSkud.value = 2;
@@ -102,10 +105,11 @@ function onConnError(){
 	if (finalInput.value === 's')
 	{
 		document.getElementById("receiveDiv").innerHTML =  'indre if løkke';
+		
 		antalSkud.value += 1;
 	}
 	
-	if (finalInput === 'm')
+	if (finalInput.value === 'm')
 	{
 		antalMisses.value += 1;
 	}
