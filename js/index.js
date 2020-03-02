@@ -4,8 +4,8 @@
 let antalSkud = document.getElementById('skud');
 let antalMisses = document.getElementById('misses');
 let antalProcent = document.getElementById('procent');
-let inputDebugJava = document.getElementById('inputDebug');
-let finalInput = document.getElementById('gemtInput');
+let inputDebugJava = document.getElementById('inputDebug').value;
+let finalInput = document.getElementById('gemtInput').value;
 antalSkud.value = 2;
 antalMisses.value = 1;
 antalProcent.value = (100- (antalMisses.value / antalSkud.value * 100)) + '%';
