@@ -114,7 +114,6 @@ function onConnError(){
 	{
 		parsedMiss += 1;
 		antalMisses.value = parsedMiss;
-		round(antalMisses, 2)
 	}
 	
 	antalProcent.value = udregnProcent(antalMisses, antalSkud);
