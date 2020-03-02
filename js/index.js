@@ -4,6 +4,8 @@
 let antalSkud = document.getElementById('skud');
 let antalMisses = document.getElementById('misses');
 let antalProcent = document.getElementById('procent');
+let inputDebugJava = document.getElementById('inputDebug');
+let finalInput = document.getElementById('gemtInput');
 antalSkud.value = 2;
 antalMisses.value = 1;
 antalProcent.value = (100- (antalMisses.value / antalSkud.value * 100)) + '%';
@@ -95,11 +97,13 @@ function onConnError(){
 
  function onData(data){ // data received from Arduino
 	let input = bytesToString(data);
-	let finalInput = input;
+	finalInput.value = input;
+	inputDebugJava.value = finalInput;
 	if (finalInput === 's')
 	{
 		document.getElementById("receiveDiv").innerHTML =  'indre if løkke';
 		antalSkud.value += 1;
+		inputDebugJava = finalInput;
 	}
 	
 	if (finalInput === 'm')
