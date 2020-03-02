@@ -105,8 +105,8 @@ function onConnError(){
 	if (finalInput.value === 's')
 	{
 		document.getElementById("receiveDiv").innerHTML =  'indre if løkke';
-		antalSkud = parseInt(antalSkud);
-		antalSkud.value += 1;
+		//antalSkud = parseInt(antalSkud);
+		antalSkud.value = Number(antalSkud) + 1;
 	}
 	
 	if (finalInput.value === 'm')
