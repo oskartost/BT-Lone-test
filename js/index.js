@@ -113,7 +113,9 @@ function onConnError(){
 	if (finalInput.value === 'm')
 	{
 		parsedMiss += 1;
+		parsedSkud += 1;
 		antalMisses.value = parsedMiss;
+		antalSkud.value = parsedSkud;
 	}
 	
 	antalProcent.value = udregnProcent(antalMisses, antalSkud);
