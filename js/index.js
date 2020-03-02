@@ -1,7 +1,7 @@
 // Based on an example:
 //https://github.com/don/cordova-plugin-ble-central
 
-let antalSkud = document.getElementById('skud');
+let antalSkud = parseInt(document.getElementById('skud')).value;
 let antalMisses = document.getElementById('misses');
 let antalProcent = document.getElementById('procent');
 //antalSkud = parseInt(antalSkud);
@@ -100,13 +100,13 @@ function onConnError(){
 
  function onData(data){ // data received from Arduino
 	let input = bytesToString(data);
-	finalInput.value = input;
+	finalInput.value = antalSkud;
 	//inputDebugJava.value = finalInput;
 	if (finalInput.value === 's')
 	{
 		document.getElementById("receiveDiv").innerHTML =  'indre if løkke';
 		//antalSkud = parseInt(antalSkud);
-		antalSkud.value = +antalSkud + 1;
+		antalSkud.value += 1;
 	}
 	
 	if (finalInput.value === 'm')
