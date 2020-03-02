@@ -2,26 +2,19 @@
 //https://github.com/don/cordova-plugin-ble-central
 
 let antalSkud = document.getElementById('skud');
-
 let antalMisses = document.getElementById('misses');
 let antalProcent = document.getElementById('procent');
-//antalSkud = parseInt(antalSkud);
-//antalMisses = parseInt(antalMisses);
-//antalProcent = parseFloat(antalProcent);
-//let inputDebugJava = document.getElementById('inputDebug').value;
 let finalInput = document.getElementById('inputDebug');
-//antalSkud = 2;
-//antalMisses = 1;
-//antalProcent = (100 - (antalMisses.value / antalSkud.value * 100));
 // ASCII only
+
 function bytesToString(buffer) {
     return String.fromCharCode.apply(null, new Uint8Array(buffer));
 }
 
-function udregnProcent(field1, field2) {
-	let parsed1 = parseInt(field1.value);
-	let parsed2 = parseInt(field2.value);
-	return 100 - (parsed1 / parsed2 * 100);
+function udregnProcent(fieldMiss, fieldSkud) {
+	let parsedMiss = parseInt(fieldMiss.value);
+	let parsedSkud = parseInt(fieldSkud.value);
+	return (100 - (parsedMiss / parsedSkud * 100));
 }
 
 
@@ -111,19 +104,17 @@ function onConnError(){
 	let parsedMiss = parseInt(antalMisses.value);
 	let input = bytesToString(data);
 	finalInput.value = input;
-	//inputDebugJava.value = finalInput;
 	if (finalInput.value === 's')
 	{
-		document.getElementById("receiveDiv").innerHTML =  'indre if løkke';
-		
 		parsedSkud += 1;
 		antalSkud.value = parsedSkud;
-		inputDebugJava = parsedSkud;
 	}
 	
 	if (finalInput.value === 'm')
 	{
-		antalMisses.value += 1;
+		parsedMiss += 1;
+		antalMisses.value = parsedMiss;
+		round(antalMisses, 2)
 	}
 	
 	antalProcent.value = udregnProcent(antalMisses, antalSkud);
