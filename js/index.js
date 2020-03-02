@@ -5,7 +5,7 @@ let antalSkud = document.getElementById('skud');
 let antalProcent = document.getElementById('procent');
 let antalScoret = document.getElementById('scoret');
 let antalMisses = document.getElementById('misses');
-let finalInput = document.getElementById('inputDebug');
+let finalInput = document.getElementById('gemtInput');
 // ASCII only
 
 function bytesToString(buffer) {
