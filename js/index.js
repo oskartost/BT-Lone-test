@@ -98,12 +98,11 @@ function onConnError(){
  function onData(data){ // data received from Arduino
 	let input = bytesToString(data);
 	finalInput.value = input;
-	inputDebugJava.value = finalInput;
+	inputDebugJava = finalInput;
 	if (finalInput === 's')
 	{
 		document.getElementById("receiveDiv").innerHTML =  'indre if løkke';
 		antalSkud.value += 1;
-		inputDebugJava = finalInput;
 	}
 	
 	if (finalInput === 'm')
