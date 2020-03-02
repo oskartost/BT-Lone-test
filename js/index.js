@@ -123,7 +123,7 @@ function onConnError(){
 	}
 	
 	antalProcent.value = udregnProcent(antalMisses, antalSkud);
-	round(antalProcent.value, 2);
+	(antalProcent.value).toFixed(2);
 }
 
 function data(txt){
