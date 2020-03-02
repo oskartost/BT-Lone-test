@@ -124,7 +124,7 @@ function onConnError(){
 	}
 	
 	parsedProcent = udregnProcent(antalMisses, antalSkud);
-	(parsedProcent).toFixed(2);
+	Math.round(parsedProcent * 100) / 100;
 	antalProcent.value = parsedProcent;
 }
 
