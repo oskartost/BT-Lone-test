@@ -118,22 +118,22 @@ function onConnError(){
 	{
 		parsedSkud += 1;
 		parsedScoret += 1;
-		antalSkud.value = ' Skud' + parsedSkud;
-		antalScoret.value = ' Scores' + parsedScoret;
+		antalSkud.value = parsedSkud;
+		antalScoret.value = parsedScoret;
 	}
 	
 	if (finalInput.value === 'm')
 	{
 		parsedMiss += 1;
 		parsedSkud += 1;
-		antalMisses.value = ' Misses' + parsedMiss;
-		antalSkud.value = ' Skud' + parsedSkud;
+		antalMisses.value = parsedMiss;
+		antalSkud.value = parsedSkud;
 	}
 	
 	parsedProcent = udregnProcent(antalMisses, antalSkud);
 	let midlertidigProcent = parsedProcent;
 	midlertidigProcent = midlertidigProcent.toFixed(2);
-	antalProcent.value = ' Procent' + midlertidigProcent + ' %';
+	antalProcent.value = midlertidigProcent + ' %';
 }
 
 function data(txt){
