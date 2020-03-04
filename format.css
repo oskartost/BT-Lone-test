@@ -15,8 +15,9 @@ h1{
 }
 
 #tabel {
-	
-	color: red;
+	background-image: url("basketball.jpg");
+	background-repeat: no-repeat;
+	background-size: 40%;
 }
 #bleDeviceList{
 	
@@ -30,7 +31,7 @@ h1{
 
 /* width will be 100% of content */
 #refreshButton{
-	width: 20%;
+	width: auto;
 	border-style: solid;
 	border-width: 10px;
 	border-color: green;
@@ -42,7 +43,7 @@ h1{
 	
 }
 #disconnectButton{
-	width: 20%;
+	width: auto;
 	border-style: solid;
 	border-width: 10px;
 	border-color: black;
