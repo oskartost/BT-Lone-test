@@ -18,6 +18,13 @@ function udregnProcent(fieldMiss, fieldSkud) {
 	return (100 - (parsedMiss / parsedSkud * 100));
 }
 
+function resetScores(){
+	antalSkud.value = 0;
+	antalMisses.value	= 0;
+	antalProcent.value = 0;
+	antalScoret.value = 0;
+}
+
 
 // ASCII only
 function stringToBytes(string) {

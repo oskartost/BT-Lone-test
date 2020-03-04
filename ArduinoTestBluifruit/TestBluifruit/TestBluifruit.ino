@@ -20,9 +20,13 @@
 #define FACTORYRESET_ENABLE         0
 #define MINIMUM_FIRMWARE_VERSION    "0.6.6"
 #define MODE_LED_BEHAVIOUR          "MODE"
+#define ANALOG_IN_PIN 0
+#define VIBRATION_SENSOR_PIN 2
 /*=========================================================================*/
 
-
+int motionDetected = LOW;
+int sensorVal = 0;
+int infraredPin = 3;
 Adafruit_BluefruitLE_SPI ble(BLUEFRUIT_SPI_CS, BLUEFRUIT_SPI_IRQ, BLUEFRUIT_SPI_RST);
 
 /* ...software SPI, using SCK/MOSI/MISO user-defined SPI pins and then user selected CS/IRQ/RST */
@@ -45,10 +49,7 @@ void error(const __FlashStringHelper*err) {
 /**************************************************************************/
 void setup(void)
 {
-  int skud = 1;
-  int miss = 1;
-  int infrared = 0;
-  int vibration = 0;
+  pinMode(infraredPin, INPUT);
   while (!Serial);  // required for Flora & Micro
   delay(500);
 
@@ -120,8 +121,39 @@ void setup(void)
 /**************************************************************************/
 void loop(void)
 {
-
+  motionDetected = digitalRead(VIBRATION_SENSOR_PIN);
+  sensorVal = analogRead(ANALOG_IN_PIN);
+  int infraredRead = digitalRead(infraredPin);
+  Serial.print("infrared value: ");
+  Serial.println(infraredRead);
+  Serial.print("Analog: ");
+  Serial.println(sensorVal);
+  //Serial.print(" Digital: ");
+  //Serial.println(motionDetected);
+  //delay(500);
+  
+  char character;
+  if (infraredRead == 0 && sensorVal > 950)
+  {
+    character = 's';
+    //swish scoring
+    Serial.println(character);
+    ble.print(character);
+  }
+  if (infraredRead == 0 && sensorVal < 950)
+  {
+    character = 's';
+    Serial.println(character);
+    ble.print(character);
+  }
+  if (infraredRead == 1 && sensorVal < 950)
+  {
+    character = 'm';
+    Serial.println(character);
+    ble.print(character);
+  }
   // Check for user input
+  /*
   char n, inputs[BUFSIZE + 1];
 
   if (Serial.available())
@@ -135,6 +167,7 @@ void loop(void)
     // Send input data to host via Bluefruit
     ble.print(inputs);
   }
+  */
   if (ble.available()) {
     Serial.print("* "); Serial.print(ble.available()); Serial.println(F(" bytes available from BTLE"));
   }
