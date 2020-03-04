@@ -1,8 +1,3 @@
-/*********************************************************************
-  This is an example based on nRF51822 based Bluefruit LE modules
-
-********************************************************************/
-
 #include <Arduino.h>
 #include <SPI.h>
 #include "Adafruit_BLE.h"
