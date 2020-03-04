@@ -5,20 +5,19 @@ display: none;
 body{
 	background-color: white;
 }	
-img{
-	width: 100%;	
+h1{
+	color: #cc5500;
 }
 
-/* The content div soround
-  * every thing in the body
-  * The css make content  smaller than the body itself
-  * and centret.
-  */
 #content {
-	width: 75%;
+	width: 80%;
 	margin: auto;
 }
 
+#tabel {
+	
+	color: red;
+}
 #bleDeviceList{
 	
 }	
@@ -31,29 +30,34 @@ img{
 
 /* width will be 100% of content */
 #refreshButton{
-	width: 100%;
+	width: 20%;
+	border-style: solid;
+	border-width: 10px;
+	border-color: green;
+	color: blue;
+	background-color: green;
+	font-weight: bold;
+	font-size: 18px;
+	
+	
+}
+#disconnectButton{
+	width: 20%;
+	border-style: solid;
+	border-width: 10px;
+	border-color: black;
+	color: red;
+	background-color: black;
+	font-weight: bold;
+	font-size: 18px;
 }
 #sendButton{
 	width: 100%;
 }
-#ledOnButton{
-	width: 100%;
-}
-#ledOffButton{
-	width: 100%;
-}
-#Skud{
-	position: relative;
-	width: auto;
-	margin: auto;
-}
-#Misses{
-	position: relative;
-	width: auto;
-	margin: auto;
-}
+
+
 #tabel{
-	width: 50%;
+	width: 100%;
 	margin: auto;
 	text-align: left;
 	

@@ -133,7 +133,7 @@ function onConnError(){
 	parsedProcent = udregnProcent(antalMisses, antalSkud);
 	let midlertidigProcent = parsedProcent;
 	midlertidigProcent = midlertidigProcent.toFixed(2);
-	antalProcent.value = midlertidigProcent + ' %';
+	antalProcent.value = 'Procent' + midlertidigProcent + ' %';
 }
 
 function data(txt){

@@ -7,19 +7,13 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">	
 		<link rel = "stylesheet" type = "text/css" href = "format.css">   <!-- Link to style sheet named format.css -->
 		<script type="text/javascript" src="cordova.js"></script> 
-        <title>BluetoothSpot</title>
+        <title>Shooter's Life</title>
     </head>
      <body onload="onLoad()">
 		<!-- Content: div-tag with id = "content" -->
 		<div id = "content">
 			
-			<h1>Shooter's Life</h1>
-			<ul id="bleDeviceList"> </ul>  
-			<button id="refreshButton" onClick = "refreshDeviceList()">Refresh</button>
-			
-			<div id="statusDiv">Status: Disconnected</div>
-			<div id="bleId">DeviceId:</div>
-			<div id="debugDiv"></div>
+			<h1>Shooter's Life</h1>	
 		<div id = "tabel">
 			<input type="text" class="hidden" id="gemtInput"/>
 			<br><br>
@@ -31,12 +25,20 @@
 			<br><br>
 			Misses <input type="text" id="misses" value="0"/>
 			<br><br>
-			<button id="resetscores" onClick = "resetScores()">reset score</button>
 			</div>
+			<button id="resetscores" onClick = "resetScores()">reset score</button>
+			
 			<div id="receiveDiv"></div>	
 		
 		<div id="sendDiv"></div>
 			<br><br>
+			<ul id="bleDeviceList"> </ul>  
+			<button id="refreshButton" onClick = "refreshDeviceList()">Refresh</button>
+			<br><br>
+			<div id="statusDiv">Status: Disconnected</div>
+			<div id="bleId">DeviceId:</div>
+			<br><br>
+			<div id="debugDiv"></div>
 			<button id="disconnectButton"onClick="disconnect()">Disconnect</button>
 		</div>
 		

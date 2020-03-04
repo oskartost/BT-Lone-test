@@ -50,6 +50,7 @@ void error(const __FlashStringHelper*err) {
 void setup(void)
 {
   pinMode(infraredPin, INPUT);
+ pinMode(0, OUTPUT);
   while (!Serial);  // required for Flora & Micro
   delay(500);
 
@@ -124,14 +125,15 @@ void loop(void)
   motionDetected = digitalRead(VIBRATION_SENSOR_PIN);
   sensorVal = analogRead(ANALOG_IN_PIN);
   int infraredRead = digitalRead(infraredPin);
+  digitalWrite(0, HIGH);
   Serial.print("infrared value: ");
   Serial.println(infraredRead);
-  Serial.print("Analog: ");
-  Serial.println(sensorVal);
+  //Serial.print("Analog: ");
+  //Serial.println(sensorVal);
   //Serial.print(" Digital: ");
   //Serial.println(motionDetected);
   //delay(500);
-  
+  /*
   char character;
   if (infraredRead == 0 && sensorVal > 950)
   {
@@ -139,35 +141,23 @@ void loop(void)
     //swish scoring
     Serial.println(character);
     ble.print(character);
+    delay(2000);
   }
   if (infraredRead == 0 && sensorVal < 950)
   {
     character = 's';
     Serial.println(character);
     ble.print(character);
+    delay(2000);
   }
   if (infraredRead == 1 && sensorVal < 950)
   {
     character = 'm';
     Serial.println(character);
     ble.print(character);
+    delay(2000);
   }
-  // Check for user input
-  /*
-  char n, inputs[BUFSIZE + 1];
-
-  if (Serial.available())
-  {
-    n = Serial.readBytes(inputs, BUFSIZE);
-    inputs[n] = 0;
-    // Send characters to Bluefruit
-    Serial.print("Sending: ");
-    Serial.println(inputs);
-
-    // Send input data to host via Bluefruit
-    ble.print(inputs);
-  }
-  */
+  
   if (ble.available()) {
     Serial.print("* "); Serial.print(ble.available()); Serial.println(F(" bytes available from BTLE"));
   }
@@ -177,5 +167,6 @@ void loop(void)
     int c = ble.read();
     Serial.print((char)c);
   }
-  delay(1000);
+  */
+  delay(100);
 }
