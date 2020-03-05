@@ -3,23 +3,37 @@ display: none;
 }
 
 body{
-	background-color: White;
+	background-color: black;
+	color: white;
+	border-style: solid;
+	border-color:#cc5500;
 }	
 h1{
 	color: #cc5500;
+	font-family: Helvetica Narrow, sans-serif;
+font-size: 50px;
+
+
 }
 
 #content {
 	width: 80%;
 	margin: auto;
+font-family: Helvetica Narrow, sans-serif;
 }
 
 #tabel {
-	background-image: url("basketball.jpg");
+	//background-image: url("basketball.jpg");//
 	background-repeat: no-repeat;
 	background-size: 40%;
+	font-family: Helvetica Narrow, sans-serif;
+	font-size: 25px;
+	font-weight: bold;
+	color:   white;
 }
 #bleDeviceList{
+	font-family: Helvetica Narrow, sans-serif;
+
 	
 }	
 #messageInput{
@@ -27,6 +41,7 @@ h1{
 }
 #list{
 	background-color: red;
+
 
 }
 
@@ -42,14 +57,12 @@ h1{
 	background-color: #cc5500;
 	font-weight: bold;
 	font-size: 18px;
+	border-radius: 12px;
+font-family: Helvetica Narrow, sans-serif;
 	
 
 
-
-
 }
-
-
 
 /* width will be 100% of content */
 #refreshButton{
@@ -61,8 +74,10 @@ h1{
 	background-color: #cc5500;
 	font-weight: bold;
 	font-size: 18px;
-
+	border-radius: 12px;
+font-family: Helvetica Narrow, sans-serif;
 	
+
 	
 }
 #disconnectButton{
@@ -74,9 +89,12 @@ h1{
 	background-color: #cc5500;
 	font-weight: bold;
 	font-size: 18px;
+	border-radius: 12px;
+	font-family: Helvetica Narrow, sans-serif;
 }
 #sendButton{
 	width: 100%;
+
 }
 
 
@@ -84,5 +102,11 @@ h1{
 	width: 100%;
 	margin: auto;
 	text-align: left;
+#statusDiv{
+	text-color: White;
+
+
+}
+
 	
 }
