@@ -15,7 +15,7 @@
 #define FACTORYRESET_ENABLE         0
 #define MINIMUM_FIRMWARE_VERSION    "0.6.6"
 #define MODE_LED_BEHAVIOUR          "MODE"
-#define ANALOG_IN_PIN 0
+#define ANALOG_IN_PIN 1
 #define VIBRATION_SENSOR_PIN 2
 /*=========================================================================*/
 
@@ -134,21 +134,21 @@ void loop(void)
     //swish scoring
     Serial.println(character);
     ble.print(character);
-    delay(2000);
+    delay(3000);
   }
   if (infraredRead == 0 && sensorVal < 950)
   {
     character = 's';
     Serial.println(character);
     ble.print(character);
-    delay(2000);
+    delay(3000);
   }
   if (infraredRead == 1 && sensorVal < 950)
   {
     character = 'm';
     Serial.println(character);
     ble.print(character);
-    delay(2000);
+    delay(3000);
   }
   
   if (ble.available()) {
