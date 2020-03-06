@@ -21,7 +21,7 @@
 
 int motionDetected = LOW;
 int sensorVal = 0;
-int infraredPin = 3;
+int infraredPin = 2;
 Adafruit_BluefruitLE_SPI ble(BLUEFRUIT_SPI_CS, BLUEFRUIT_SPI_IRQ, BLUEFRUIT_SPI_RST);
 
 /* ...software SPI, using SCK/MOSI/MISO user-defined SPI pins and then user selected CS/IRQ/RST */
