@@ -9,6 +9,7 @@ body{
 	border-style: solid;
 	border-width: 10px;
 	border-color:#cc5500;
+	border-radius: 15px;
 	position:fixed;
 	top:0;
 	bottom:0;
