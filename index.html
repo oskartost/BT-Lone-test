@@ -5,7 +5,7 @@
         <meta name="format-detection" content="telephone=no" />
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1">	
-		<link rel = "stylesheet" type = "text/css" href = "format.css">   <!-- Link to style sheet named format.css -->
+		<link rel = "stylesheet" type = "text/css" href = "format.css">
 		<script type="text/javascript" src="cordova.js"></script> 
         <title>Shooter's Life</title>
     </head>
@@ -15,33 +15,28 @@
 		<div id = "tabel">
 			<input type="text" class="hidden" id="gemtInput"/>
 			<br><br>
-			Skud <input type="text" id="skud" value="137"/> 
+			Skud <input type="text" id="skud" value="0"/> 
 			<br><br>
-			Procent <input type="text" id="procent" value="81.75 %"/> 
+			Procent <input type="text" id="procent" value="0"/> 
 			<br><br>
-			Scores <input type="text" id="scoret" value = "112"/>
+			Scores <input type="text" id="scoret" value = "0"/>
 			<br><br>
-			Misses <input type="text" id="misses" value="25"/>
+			Misses <input type="text" id="misses" value="0"/>
 			<br><br>
-			<button id="resetscores" onClick = "resetScores()">Reset Score</button>
+			<button id="resetscores" class="buttonStyle" onClick = "resetScores()">Reset Score</button>
 			<br><br>
 			</div>
-			
-			<div id="receiveDiv"></div>	
-		
 		<div id="sendDiv"></div>
 			<ul id="bleDeviceList"></ul> 
 			<br><br> 
-			<button id="refreshButton" onClick = "refreshDeviceList()">Refresh</button>
+			<button id="refreshButton" class="buttonStyle" onClick = "refreshDeviceList()">Refresh</button>
 			<br><br>
 			<div id="debugDiv"></div>
-			<button id="disconnectButton"onClick="disconnect()">Disconnect</button>
+			<button id="disconnectButton" class="buttonStyle" onClick="disconnect()">Disconnect</button>
 			<br><br>
 			<div id="statusDiv">Status: Disconnected</div>
 			<div id="bleId">DeviceId:</div>
 		</div>
-		
-
 		        <script type="text/javascript" src="js/index.js"></script>
     </body>
 </html>
