@@ -11,21 +11,17 @@ let finalInput = document.getElementById('gemtInput');
 function bytesToString(buffer) {
     return String.fromCharCode.apply(null, new Uint8Array(buffer));
 }
-
 function udregnProcent(fieldMiss, fieldSkud) {
 	let parsedMiss = parseInt(fieldMiss.value);
 	let parsedSkud = parseInt(fieldSkud.value);
 	return (100 - (parsedMiss / parsedSkud * 100));
 }
-
 function resetScores(){
 	antalSkud.value = 0;
 	antalMisses.value	= 0;
 	antalProcent.value = 0;
 	antalScoret.value = 0;
 }
-
-
 // ASCII only
 function stringToBytes(string) {
     var array = new Uint8Array(string.length);
@@ -34,7 +30,6 @@ function stringToBytes(string) {
     }
     return array.buffer;
 }
-
 // this is ble hm-10 UART service
 /*var blue= {
     serviceUUID: "0000FFE0-0000-1000-8000-00805F9B34FB",
@@ -47,20 +42,15 @@ var blue ={
     txCharacteristic: '6e400002-b5a3-f393-e0a9-e50e24dcca9e', // transmit is from the phone's perspective
     rxCharacteristic: '6e400003-b5a3-f393-e0a9-e50e24dcca9e'  // receive is from the phone's perspective
 }
-
 var ConnDeviceId;
 var deviceList =[];
- 
 function onLoad(){
 	document.addEventListener('deviceready', onDeviceReady, false);
     bleDeviceList.addEventListener('touchstart', conn, false); // assume not scrolling
 }
-
 function onDeviceReady(){
 	refreshDeviceList();
-}
-
-	 
+} 
 function refreshDeviceList(){
 	//deviceList =[];
 	document.getElementById("bleDeviceList").innerHTML = ''; // empties the list
@@ -71,8 +61,6 @@ function refreshDeviceList(){
 		ble.scan([blue.serviceUUID], 5, onDiscoverDevice, onError);
 	}
 }
-
-
 function onDiscoverDevice(device){
 	//Make a list in html and show devises
 		if (device.name == "CAOS") {
@@ -83,8 +71,6 @@ function onDiscoverDevice(device){
 		document.getElementById("bleDeviceList").appendChild(listItem);
 		}
 }
-
-
 function conn(){
 	var  deviceTouch= event.srcElement.innerHTML;
 	document.getElementById("debugDiv").innerHTML =""; // empty debugDiv
@@ -100,13 +86,11 @@ function onConnect(){
 	document.getElementById("bleId").innerHTML = ConnDeviceId;
 	ble.startNotification(ConnDeviceId, blue.serviceUUID, blue.rxCharacteristic, onData, onError);
 }
-
 //failure
 function onConnError(){
 	alert("Problem connecting");
 	document.getElementById("statusDiv").innerHTML = " Status: Disconnected";
 }
-
  function onData(data){ // data received from Arduino
 	let parsedSkud = parseInt(antalSkud.value);
 	let parsedMiss = parseInt(antalMisses.value);
@@ -135,32 +119,23 @@ function onConnError(){
 	midlertidigProcent = midlertidigProcent.toFixed(2);
 	antalProcent.value = midlertidigProcent + ' %';
 }
-
 function data(txt){
 	GemtInput.value = txt;
 	sendData();
 }	
-
 function sendData() { // send data to Arduino
 	var data = stringToBytes(GemtInput.value)
 	ble.writeWithoutResponse(ConnDeviceId, blue.serviceUUID, blue.txCharacteristic, data, onSend, onError);
 }
-	
 function onSend(){
 	document.getElementById("sendDiv").innerHTML = "Sent: " + GemtInput.value + "<br/>";
 }
-
-
 function disconnect() {
 	ble.disconnect(ConnDeviceId, onDisconnect, onError);
 }
-
 function onDisconnect(){
 	document.getElementById("statusDiv").innerHTML = "Status: Disconnected";
 }
 function onError(reason)  {
 	alert("ERROR: " + reason); // real apps should use notification.alert
 }
-
-
-	
